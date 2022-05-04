@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700;800&display=swap");
+html,
+body {
+  min-width: 100%;
+  margin: auto;
+  background-color: yellow;
+}
+:root {
+  --dark-bg: #262626;
+  --gray-1: #bcb4b4;
+  --deep-dark: #1e1e1e;
+  --gray-2: #363636;
+  --white: white;
+  --black: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: "Montserrat", sans-serif !important;
+  box-sizing: border-box;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+label,
+option {
+  font-size: 14px;
+  color: #333333;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.MuiInputBase-root {
+  margin-top: 0 !important;
+  border-radius: 8px;
+  height: 40px;
+}
+
+textarea {
+  border-radius: 8px;
+  outline: none;
+  padding: 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}

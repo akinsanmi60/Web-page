@@ -69,13 +69,8 @@ function MarketPage() {
               variant="contained"
               sx={{
                 backgroundColor: " #e8491d",
-                marginTop: "-3px",
-                height: "37px",
-                "&:hover": {
-                  backgroundColor: "#e8491d",
-                  borderColor: "#0062cc",
-                  boxShadow: "none",
-                },
+                marginBottom: "3px",
+                height: "38px",
                 "&:active": {
                   boxShadow: "none",
                   backgroundColor: "green",

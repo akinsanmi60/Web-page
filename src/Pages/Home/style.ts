@@ -4,7 +4,6 @@ import img from "../../Assets/steven-weeks.jpg";
 
 export const HomePageWrapper = styled.div`
   margin: auto;
-  overflow: hidden;
   width: 100%;
   background-color: var(--dark-bg);
   color: white;

@@ -29,8 +29,7 @@ export const MarketHeader = styled.div`
       sans-serif;
     font-size: 15px;
     padding: 8px;
-    width: 450px;
-    display: inline-block;
+    width: 35vw;
     border: 1px solid #e1e0e2;
     box-sizing: border-box;
     margin-right: 9px;

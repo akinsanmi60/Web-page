@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import Errorpage from "./Pages/Error";
 import Verification from "./Pages/Verification";
 import Touch from "./Pages/Contact";
-import Blog from "./Pages/Blog";
+import Blog from "./Pages/News-Blog";
 import Career from "./Pages/Career";
 import About from "./Pages/About";
 import Companyoverviewpage from "./Pages/About/Component/overviewIndex";
@@ -25,7 +25,9 @@ import SeedlingsPage from "./Pages/OpenMarket/SeedsMarket";
 import FieldsPage from "./Pages/OpenMarket/LandsMarket";
 // import ProductCardPage from "./Pages/ProductCard/Pesticideindex";
 import QuestionPage from "./Pages/Help";
+import NewsPage from "./Pages/News-Blog/componenets/All-news";
 import Wrapper from "./Util/withlayout";
+import LayoutnewWrapper from "./Util/bloglayout";
 
 function App() {
   return (
@@ -94,9 +96,20 @@ function App() {
       <Route path="/Login" element={<Login />} />
       <Route path="/Signup" element={<Signup />} />
       <Route path="/Verification" element={<Verification />} />
-      <Route path="/Blog" element={<Blog />} />
       <Route path="/Career" element={<Career />} />
       <Route path="*" element={<Errorpage />} />
+      <Route
+        path="/Blog"
+        element={
+          <LayoutnewWrapper>
+            <Blog />
+          </LayoutnewWrapper>
+        }
+      >
+        <Route index element={<NewsPage />} />
+        <Route path="newspage" element={<NewsPage />} />
+        <Route path="AnimalsPage" element={<AnimalsPage />} />
+      </Route>
     </Routes>
   );
 }

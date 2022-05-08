@@ -1,15 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import { AuthProvider } from "./Context/AuthProvider";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
+import { AuthProvider } from "./Context/AuthProvider";
+import App from "./App";
+import "./index.css";
+
+const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <QueryClientProvider client={queryClient}>
+          <App />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,

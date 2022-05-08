@@ -24,10 +24,11 @@ function News({ Recentnews }: NewsProp) {
                 opacity: [0.9, 0.8, 0.7],
               },
             }}
+            key={title}
           >
             <Card>
               <CardContent>
-                <div key={title} className="news-item">
+                <div className="news-item">
                   <img src={image} alt="" className="news-item-img" />
                   <div className="content">
                     <h3>{capitalizeFirstLetter(title)}</h3>

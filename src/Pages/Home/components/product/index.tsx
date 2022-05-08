@@ -21,8 +21,9 @@ function LatestProduct() {
                   opacity: [0.1, 0.1, 0.8],
                 },
               }}
+              key={latest.title}
             >
-              <Card key={latest.title}>
+              <Card>
                 <CardContent>
                   <img src={latest.img} alt={latest.title} />
                   <div className="text-container">

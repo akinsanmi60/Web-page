@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const BlogWrapper = styled.div`
-  // background: green;
   padding: 15px;
   .title {
     display: flex;

@@ -27,8 +27,9 @@ function BuyerRequest() {
                     opacity: [0.1, 0.1, 0.8],
                   },
                 }}
+                key={latest.id}
               >
-                <Card key={latest.id}>
+                <Card>
                   <CardContent>
                     <div className="text-container">
                       <p>

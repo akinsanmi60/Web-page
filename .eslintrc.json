@@ -17,7 +17,7 @@
     "project": ["tsconfig.json"],
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": ["react", "@typescript-eslint", "import", "react-hooks"],
   "rules": {
     "react/no-unescaped-entities": [0, {}],
     "no-unused-vars": [0, {}],
@@ -76,6 +76,10 @@
           "onKeyUp"
         ]
       }
+    ],
+    "no-console": [
+      "warn",
+      { "allow": ["clear", "info", "error", "dir", "trace", "log"] }
     ]
   }
 }

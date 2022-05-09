@@ -99,7 +99,7 @@ function App() {
       <Route path="/Career" element={<Career />} />
       <Route path="*" element={<Errorpage />} />
       <Route
-        path="/Blog"
+        path="/blog"
         element={
           <LayoutnewWrapper>
             <Blog />

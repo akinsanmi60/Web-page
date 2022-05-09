@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import Logo from "../../../../Common/Logo/Logo";
+import Logo from "../Logo/Logo";
 import { FooterWrapper, LinkItem } from "./style";
 
 function Label(props: { [x: string]: any; htmlFor: any }) {
@@ -42,6 +42,7 @@ function Footer() {
 
       <div className="letter">
         <div className="footer-contact">
+          <h1>Info Links</h1>
           <LinkItem>
             <Link to="/Touch">Contact us</Link>
           </LinkItem>
@@ -58,7 +59,7 @@ function Footer() {
             <Link to="/MarketPlace">Market</Link>
           </LinkItem>
         </div>
-        <div>
+        <div className="footerform">
           <Label htmlFor="letters">Subscribe for updates</Label>
           <input
             type="text"

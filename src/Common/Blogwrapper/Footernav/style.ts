@@ -1,39 +1,5 @@
 import styled from "styled-components";
 
-const Header = styled.div`
-  display: flex;
-  width: 100%;
-  height: 70px;
-  padding: 15px;
-  background: #35424a;
-  z-index: 99999;
-  position: sticky;
-  top: 0;
-  border-bottom: #e8491d 10px solid;
-  p {
-    font-size: 13px;
-    color: white;
-  }
-  z-index: 99999;
-  &:active {
-    color: #e8491d;
-  }
-  .input-container {
-    margin: 0 auto;
-  }
-  input[type="text"] {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    font-size: 15px;
-    padding: 8px;
-    width: 35vw;
-    border: 1px solid #e1e0e2;
-    box-sizing: border-box;
-    margin-right: 9px;
-  }
-`;
-export default Header;
-
 export const FooterNav = styled.div`
   display: flex;
   justify-content: space-between;
@@ -54,6 +20,17 @@ export const FooterNav = styled.div`
     font-weight: 500;
     align-items: center;
   }
+  @media (max-width: 425px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+
+    p {
+      font-size: 8px;
+      color: white;
+      margin-top: 4px;
+    }
+  }
 `;
 
 export const LinkItem = styled.li`
@@ -67,5 +44,8 @@ export const LinkItem = styled.li`
   text-decoration: none;
   &:active {
     color: #e8491d;
+  }
+  @media (max-width: 425px) {
+    font-size: 8px;
   }
 `;

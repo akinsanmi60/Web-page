@@ -14,21 +14,31 @@ const Wrapper = styled.div`
     width: fit-content;
     text-transform: capitalize;
   }
-  .blogitem-box{
+
+  .blogitem-box {
     margin-bottom: 30px;
   }
+
   .blogItem-wrap {
-    background:  #35424a;
+    background: #35424a;
     display: flex;
     flex-direction: column;
     padding: 3%;
     margin: 0 2%;
-};
-    img {
-      border-radius: 10px;
-      width: 100%;
-      height: 200px;
-    }
+  }
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+  }
+
+  span {
+    text-align: justify;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
   }
 `;
 export default Wrapper;

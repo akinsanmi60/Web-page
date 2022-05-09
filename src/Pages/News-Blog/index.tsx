@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { Link, Outlet } from "react-router-dom";
+import moment from "moment";
+import CircularProgress from "@mui/material/CircularProgress";
 import BlogNewsWrapper, { LinkItem } from "./style";
 import { ReviewProp } from "./type";
 
@@ -19,7 +21,7 @@ function MainBlogPage() {
 
   const [reviews, setReviews] = useState<ReviewProp[]>([]);
 
-  useQuery(
+  const { isLoading } = useQuery(
     "newsapple",
     () =>
       axios.get(
@@ -53,20 +55,31 @@ function MainBlogPage() {
             ))}
           </div>
           <div className="reviewcontainer">
-            <h1 className="connect">Recent Reviews</h1>
-            {reviews.slice(0, 4).map(review => (
-              <div key={review.title}>
-                <div className="newrecent">
-                  <div className="image">
-                    <img src={`${review.urlToImage}`} alt="" />
-                  </div>
-                  <div className="newtext">
-                    <p>{review.title}</p>
-                    <p>{review.publishedAt}</p>
+            <h1 className="connect">Featured</h1>
+            {isLoading ? (
+              <CircularProgress />
+            ) : (
+              reviews.slice(0, 5).map(review => (
+                <div key={review.title}>
+                  <div className="newrecent">
+                    <div className="image">
+                      <img src={`${review.urlToImage}`} alt="" />
+                    </div>
+                    <div className="newtext">
+                      <p>{review.title}</p>
+                      <p>
+                        <span>
+                          {moment(`${review.publishedAt}`).format("LL")}
+                        </span>
+                        <span>
+                          {moment(`${review.publishedAt}`).format("LT")}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

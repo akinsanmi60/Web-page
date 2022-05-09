@@ -43,7 +43,7 @@ function NavLinks() {
     <NavLinksContainer>
       <LinksWrapper>
         <LinkItem>
-          <Link style={styles.a} to="/Blog">
+          <Link style={styles.a} to="/blog">
             Blog
           </Link>
         </LinkItem>

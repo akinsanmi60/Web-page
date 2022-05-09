@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     justify-content: center;
   }
 
+  .select-btn {
+    display: flex;
+    justify-content: center;
+  }
   .paginationBttns a {
     padding: 10px;
     margin: 8px;
@@ -42,6 +46,7 @@ export default Wrapper;
 
 export const EmptyData = styled.div`
   background-color: var(--dark-bg);
+  height: 100%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -49,6 +54,9 @@ export const EmptyData = styled.div`
   padding-bottom: 95px;
   p {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 22px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 `;

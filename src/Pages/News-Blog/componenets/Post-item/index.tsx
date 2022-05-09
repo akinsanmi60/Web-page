@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import Wrapper from "./style";
 import { PostcardProp } from "./type";
 
@@ -23,7 +24,10 @@ export default function Postcard({ post }: PostcardProp) {
             <div className="blogItem-author">
               <div>
                 <h6>{post.author}</h6>
-                <p>{post.publishedAt}</p>
+                <p>
+                  <span>{moment(`${post.publishedAt}`).format("LL")}</span>
+                  <span>{moment(`${post.publishedAt}`).format("LT")}</span>
+                </p>
               </div>
             </div>
             {/* <Link className="blogItem-link" to={`/blog/${id}`}>

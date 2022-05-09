@@ -2,7 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import Navbar from "../Common/Navabar";
-import Footer from "../Pages/Home/components/footer";
+import Footer from "../Common/footer";
 
 const Wrapper: React.FC = props => (
   <>

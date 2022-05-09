@@ -5,6 +5,9 @@ const BlogNewsWrapper = styled.div`
   color: white;
   .blogwrapper {
     display: flex;
+    @media (max-width: 425px) {
+      flex-direction: column;
+    }
   }
   .blogmain {
     flex: 8;
@@ -15,6 +18,13 @@ const BlogNewsWrapper = styled.div`
     margin-top: 30px;
     .content {
       width: 100%;
+    }
+    @media (max-width: 425px) {
+      border-right: none;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 15px;
     }
   }
   .sidebar {
@@ -28,6 +38,12 @@ const BlogNewsWrapper = styled.div`
       font-weight: bolder;
       text-align: center;
     }
+    @media (max-width: 768px) {
+      margin-top: 15px;
+      h1 {
+        font-size: 15px;
+      }
+    }
   }
   .connect {
     padding: 3px 0;
@@ -37,6 +53,9 @@ const BlogNewsWrapper = styled.div`
   }
   .categorycontainer {
     padding: 10px;
+    @media (max-width: 425px) {
+      margin-top: -50px;
+    }
   }
   .reviewcontainer {
     margin-top: 90px;
@@ -45,6 +64,9 @@ const BlogNewsWrapper = styled.div`
       flex-directon: row;
       margin: 10px;
       padding: 8px;
+      @media (max-width: 768px) {
+        padding: 0;
+      }
       .image {
         width: auto;
         transition: 1s;
@@ -53,6 +75,14 @@ const BlogNewsWrapper = styled.div`
           width: 100px;
           height: 100px;
           border-radius: 100%;
+          @media (max-width: 425px) {
+            width: 60px;
+            height: 60px;
+          }
+          @media (max-width: 768px) {
+            width: 80px;
+            height: 80px;
+          }
         }
       }
     }
@@ -66,7 +96,26 @@ const BlogNewsWrapper = styled.div`
         font-style: italic;
         font-weight: normal;
         margin-left: 10px;
+        font-size: 16px;
       }
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 425px) {
+      margin-top: 5px;
+    }
+  }
+  span {
+    text-align: justify;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
+    @media (max-width: 768px) {
+      font-size: 10px;
     }
   }
 `;
@@ -86,5 +135,8 @@ export const LinkItem = styled.li`
     color: white;
     font-size: inherit;
     margin-top: 9px;
+  }
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 `;

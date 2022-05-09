@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import ReactPaginate from "react-paginate";
 import { Typography } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import { ReactComponent as LoadingLP } from "../../../../Assets/Fast loading-amico.svg";
 import Postcard from "../Post-item";
 import Wrapper, { EmptyData } from "./style";
@@ -37,7 +39,7 @@ function AllBlogPage() {
       </div>
     ));
 
-  const { isLoading } = useQuery(
+  const { isLoading, isError } = useQuery(
     "news",
     () =>
       axios.get(
@@ -56,23 +58,33 @@ function AllBlogPage() {
       <div className="postwrapper">
         {isLoading ? (
           <EmptyData>
+            <CircularProgress />
             <LoadingLP style={styles.logo} />
             <Typography>Oops!, No news to display</Typography>
           </EmptyData>
+        ) : isError ? (
+          <EmptyData>
+            <LoadingLP style={styles.logo} />
+            <Typography>Oops!, Something went wrong while loading</Typography>
+          </EmptyData>
         ) : (
-          <div>{displayPost}</div>
+          <div>
+            {displayPost}
+            <div className="select-btn">
+              <ReactPaginate
+                previousLabel="<<<"
+                nextLabel=">>>"
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName="paginationBttns"
+                previousLinkClassName="previousBttn"
+                nextLinkClassName="nextBttn"
+                disabledClassName="paginationDisabled"
+                activeClassName="paginationActive"
+              />
+            </div>
+          </div>
         )}
-        <ReactPaginate
-          previousLabel="<<<"
-          nextLabel=">>>"
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName="paginationBttns"
-          previousLinkClassName="previousBttn"
-          nextLinkClassName="nextBttn"
-          disabledClassName="paginationDisabled"
-          activeClassName="paginationActive"
-        />
       </div>
     </Wrapper>
   );

@@ -1,7 +1,9 @@
 const Recentnews = [
   {
     created: "2021-11-23T04:49:51.307Z",
-    description: "waec exams would start next week, i hope we are all prepared",
+    description:
+      "it's that special time of the year... yes! it's christmas. we would be going on our christmas break on the 17th of december 2021.",
+
     image: "https://independent.ng/wp-content/uploads/2018/05/Soya-beans.jpg",
     title: "waec exams are coming fast",
     type: "external",
@@ -9,7 +11,8 @@ const Recentnews = [
   },
   {
     created: "2021-11-25T06:18:44.154Z",
-    description: "class meeting for students",
+    description:
+      "it's that special time of the year... yes! it's christmas. we would be going on our christmas break on the 17th of december 2021.",
     image: "https://independent.ng/wp-content/uploads/2018/05/Soya-beans.jpg",
     title: "class meeting",
     type: "internal",

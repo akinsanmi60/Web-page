@@ -16,42 +16,39 @@ function BuyerRequest() {
       <div className="box">
         <h1 className="wrapper-title">Buyer's Request</h1>
         <RequestCardDiv>
-          {buyerRequest.slice(0, 4).map(latest => {
-            return (
-              <Box
-                width="200px"
-                min-height="150px"
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "blue",
-                    opacity: [0.1, 0.1, 0.8],
-                  },
-                }}
-                key={latest.id}
-              >
-                <Card>
-                  <CardContent>
-                    <div className="text-container">
-                      <p>
-                        <b>I need</b>
-                        {capitalizeFirstLetter(latest.title)}
-                      </p>
-                      <p className="request-description">
-                        {capitalizeFirstLetter(latest.description)}
-                      </p>
-                      <div className="timelocation">
-                        <span>{moment(latest.created).format("LL")}</span>
-                        <span>{moment(latest.created).format("LT")}</span>
+          <div className="wrapperbox">
+            {buyerRequest.slice(0, 4).map(latest => {
+              return (
+                <Box
+                  className="mediabox"
+                  width="220px"
+                  min-height="80px"
+                  marginRight="12px"
+                  key={latest.id}
+                >
+                  <Card>
+                    <CardContent>
+                      <div className="text-container">
+                        <p>
+                          <b>I need</b> {capitalizeFirstLetter(latest.title)}
+                        </p>
+                        <p className="request-description">
+                          {capitalizeFirstLetter(latest.description)}
+                        </p>
+                        <div className="timelocation">
+                          <span>{moment(latest.created).format("L")}</span>
+                          <span>{moment(latest.created).format("LT")}</span>
+                        </div>
+                        <p className="request-location">{latest.location}</p>
                       </div>
-                      <p className="request-location">{latest.location}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Box>
-            );
-          })}
+                    </CardContent>
+                  </Card>
+                </Box>
+              );
+            })}
+          </div>
         </RequestCardDiv>
-        <Box textAlign="center" marginTop={5}>
+        <Box textAlign="center" marginTop={2}>
           <Button
             size="large"
             variant="outlined"

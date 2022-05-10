@@ -9,6 +9,9 @@ export const CounterWrapper = styled.div`
   margin-bottom: 20px;
   color: white;
   justify-content: space-around;
+  @media (max-width: 425px) {
+    margin-bottom: 9px;
+  }
   .details {
     margin-top: 10px;
     h1 {
@@ -21,6 +24,19 @@ export const CounterWrapper = styled.div`
       text-align: center;
       font-weight: 900;
       font-size: 18px;
+    }
+
+    @media (max-width: 425px) {
+      h1 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 10px;
+      }
+      p {
+        text-align: center;
+        font-weight: 600;
+        font-size: 9px;
+      }
     }
   }
 `;

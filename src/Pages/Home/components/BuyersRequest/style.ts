@@ -5,11 +5,21 @@ export const RequestWrapper = styled.div`
   padding: 24px;
   margin-top: 20px;
 
+  @media (max-width: 425px) {
+    padding: 14px;
+    margin-top: 10px;
+  }
+
   .wrapper-title {
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     border-left: 3px solid #e8491d;
-    padding: 2px;
+    padding: 8px;
+    @media (max-width: 425px) {
+      font-size: 15px;
+      border-left: 3px solid #e8491d;
+      padding: 4px;
+    }
   }
 
   .timelocation {
@@ -26,9 +36,8 @@ export const RequestWrapper = styled.div`
   .request-description,
   .request-location {
     text-align: justify;
-    font-style: italic;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 15px;
     color: #333333;
     margin-top: 5px;
@@ -42,8 +51,46 @@ export const RequestWrapper = styled.div`
 `;
 
 export const RequestCardDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
+  .wrapperbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    p {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 14px;
+      text-align: justify;
+      color: #333333;
+    }
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      padding: 7px;
+    }
+  }
+  @media (max-width: 425px) {
+    .wrapperbox {
+      flex-direction: column;
+      margin-top: 0px;
+    }
+    .wrapper-title {
+      font-size: 10px;
+    }
+    .mediabox {
+      width: 370px;
+    }
+  }
+  @media (max-width: 768px) {
+    .wrapperbox {
+    }
+    .mediabox {
+      width: 380px;
+      padding: 7px;
+    }
+  }
 `;

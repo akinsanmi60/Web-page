@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { BlogWrapper } from "./style";
 import Recentnews from "../../../../Storage/Newsdetails";
 import Recentjobs from "../../../../Storage/Jobdetails";
-import News from "./Recent";
+import News from "./Recent/Recent";
 import Jobs from "./Jobs";
 
 function Blog() {

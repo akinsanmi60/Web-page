@@ -13,16 +13,47 @@ export const ImageWrapper = styled.div`
   min-height: 550px;
   background-size: cover;
   margin-bottom: 30px;
+
+  @media (max-width: 425px) {
+    min-height: 210px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+  }
+  @media (min-width: 768px) {
+    background-size: cover;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   .sideA {
     width: 70%;
   }
   .sideB {
-    width: 28%;
+    width: 30%;
+  }
+  @media (max-width: 425px) {
+    flex-direction: column;
+    .sideA {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .sideA {
+      width: 100%;
+    }
+  }
+  @media (max-width: 425px) {
+    .sideB {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .sideB {
+      width: 100%;
+    }
   }
 `;

@@ -9,10 +9,10 @@ export const BlogWrapper = styled.div`
   }
   .jobs {
     margin-top: 40px;
-    flex: 0.8;
+    // flex: 0.8;
   }
   .current-news {
-    flex: 0.8;
+    // flex: 0.8;
   }
   .chart-inner-title {
     font-weight: 600;

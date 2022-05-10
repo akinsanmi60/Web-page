@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BlogNewsWrapper = styled.div`
   background-color: var(--dark-bg);
   color: white;
+  overflow: hidden;
   .blogwrapper {
     display: flex;
     @media (max-width: 425px) {

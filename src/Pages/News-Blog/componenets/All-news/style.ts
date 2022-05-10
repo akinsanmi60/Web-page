@@ -4,6 +4,7 @@ const Wrapper = styled.div`
   background-color: var(--dark-bg);
   height: 100%;
   color: white;
+  overflow: hidden;
   .postwrapper {
   }
   .paginationBttns {

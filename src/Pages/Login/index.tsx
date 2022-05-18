@@ -1,34 +1,44 @@
-import React, { useEffect, useRef, useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 import Logo from "../../Common/Logo/Logo";
 import { Wrapper, Button, LogginWrapper, Box } from "./style";
 import { ReactComponent as PassLogo } from "../../Assets/passimage.svg";
+import AuthContext from "../../Context/AuthProvider";
 
 function Login() {
-  const userRef = useRef<HTMLInputElement>(null!);
-  const errRef = useRef<HTMLInputElement>(null!);
-
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState("");
-  const [errMsg, setErrMsg] = useState("");
+  const { setAuthUser } = useContext(AuthContext);
+  // const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, password]);
-
-  const handleLogin = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    setUser("");
-    setPassword("");
-    setSuccess(true);
-    errRef.current.focus();
+  const handleLogin = async (data: any) => {
+    console.log(data);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/auth/login",
+        data,
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        },
+      );
+      const token = response?.data?.token;
+      const user = response?.data?.user;
+      setAuthUser({ user, token });
+      setSuccess(true);
+    } catch (err) {
+      console.error(err);
+    }
   };
-
   return (
     <LogginWrapper>
       {success ? (
@@ -46,38 +56,32 @@ function Login() {
                     associated with your account to sign in.
                   </p>
 
-                  <form onSubmit={handleLogin}>
-                    <p
-                      ref={errRef}
-                      className={errMsg ? "errmsg" : "offscreen"}
-                      aria-live="assertive"
-                    >
-                      {errMsg}
-                    </p>
-                    <label htmlFor="username">Username:</label>
+                  <form onSubmit={handleSubmit(handleLogin)}>
+                    <label htmlFor="email">Email:</label>
                     <input
                       type="text"
-                      id="username"
-                      ref={userRef}
+                      id="email"
                       autoComplete="off"
-                      onChange={e => setUser(e.target.value)}
-                      value={user}
                       required
+                      {...register("email", {
+                        pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      })}
                     />
                     <label htmlFor="password">Password:</label>
                     <input
                       type="password"
                       id="password"
-                      onChange={e => setPassword(e.target.value)}
-                      value={password}
                       required
+                      {...register("password", {
+                        maxLength: 20,
+                      })}
                     />
 
                     <span className="forgetpass">
                       Forgot Password?
                       <Link to="/passwordreset">Reset it</Link>
                     </span>
-                    <Button disabled={!user || !password}>Sign In</Button>
+                    <Button>Sign In</Button>
                     <p>
                       Don't have an account?.
                       <Link to="/signup" className="attest">

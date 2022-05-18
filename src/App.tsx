@@ -28,89 +28,93 @@ import QuestionPage from "./Pages/Help";
 import NewsPage from "./Pages/News-Blog/componenets/All-news";
 import Wrapper from "./Util/withlayout";
 import LayoutnewWrapper from "./Util/bloglayout";
+// context
+import { AuthProvider } from "./Context/AuthProvider";
 
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Wrapper>
-            <Home />
-          </Wrapper>
-        }
-      />
-      <Route
-        path="/Touch"
-        element={
-          <Wrapper>
-            <Touch />
-          </Wrapper>
-        }
-      />
-      <Route
-        path="/About"
-        element={
-          <Wrapper>
-            <About />
-          </Wrapper>
-        }
-      >
-        <Route index element={<Companyoverviewpage />} />
-        <Route path="Companyoverviewpage" element={<Companyoverviewpage />} />
-        <Route path="Executivespage" element={<Executivespage />} />
-        <Route path="Choosepage" element={<Choosepage />} />
-      </Route>
+    <AuthProvider>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Wrapper>
+              <Home />
+            </Wrapper>
+          }
+        />
+        <Route
+          path="/Touch"
+          element={
+            <Wrapper>
+              <Touch />
+            </Wrapper>
+          }
+        />
+        <Route
+          path="/About"
+          element={
+            <Wrapper>
+              <About />
+            </Wrapper>
+          }
+        >
+          <Route index element={<Companyoverviewpage />} />
+          <Route path="Companyoverviewpage" element={<Companyoverviewpage />} />
+          <Route path="Executivespage" element={<Executivespage />} />
+          <Route path="Choosepage" element={<Choosepage />} />
+        </Route>
 
-      <Route
-        path="/RequestPlace"
-        element={
-          <Wrapper>
-            <RequestPlace />
-          </Wrapper>
-        }
-      />
+        <Route
+          path="/RequestPlace"
+          element={
+            <Wrapper>
+              <RequestPlace />
+            </Wrapper>
+          }
+        />
 
-      <Route
-        path="/QuestionPage"
-        element={
-          <Wrapper>
-            <QuestionPage />
-          </Wrapper>
-        }
-      />
+        <Route
+          path="/QuestionPage"
+          element={
+            <Wrapper>
+              <QuestionPage />
+            </Wrapper>
+          }
+        />
 
-      <Route path="/MarketPlace" element={<MarketPlace />}>
-        <Route index element={<AnimalsPage />} />
-        <Route path="AnimalsPage" element={<AnimalsPage />} />
-        <Route path="ChemicalPage" element={<ChemicalPage />} />
-        <Route path="EquipmentsPage" element={<EquipmentsPage />} />
-        <Route path="FishingPage" element={<FishingPage />} />
-        <Route path="FeedPage" element={<FeedPage />} />
-        <Route path="SeedlingsPage" element={<SeedlingsPage />} />
-        <Route path="FertilizerPage" element={<FertilizerPage />} />
-        <Route path="BirdsPage" element={<BirdsPage />} />
-      </Route>
-      {/* <Route path="/ProductCardPage" element={<ProductCardPage />} /> */}
-      <Route path="/FieldsPage" element={<FieldsPage />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Signup" element={<Signup />} />
-      <Route path="/Verification" element={<Verification />} />
-      <Route path="/Career" element={<Career />} />
-      <Route path="*" element={<Errorpage />} />
-      <Route
-        path="/blog"
-        element={
-          <LayoutnewWrapper>
-            <Blog />
-          </LayoutnewWrapper>
-        }
-      >
-        <Route index element={<NewsPage />} />
-        <Route path="newspage" element={<NewsPage />} />
-        <Route path="AnimalsPage" element={<AnimalsPage />} />
-      </Route>
-    </Routes>
+        <Route path="/MarketPlace" element={<MarketPlace />}>
+          <Route index element={<AnimalsPage />} />
+          <Route path="AnimalsPage" element={<AnimalsPage />} />
+          <Route path="ChemicalPage" element={<ChemicalPage />} />
+          <Route path="EquipmentsPage" element={<EquipmentsPage />} />
+          <Route path="FishingPage" element={<FishingPage />} />
+          <Route path="FeedPage" element={<FeedPage />} />
+          <Route path="SeedlingsPage" element={<SeedlingsPage />} />
+          <Route path="FertilizerPage" element={<FertilizerPage />} />
+          <Route path="BirdsPage" element={<BirdsPage />} />
+        </Route>
+        {/* <Route path="/ProductCardPage" element={<ProductCardPage />} /> */}
+        <Route path="/FieldsPage" element={<FieldsPage />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Verification" element={<Verification />} />
+        <Route path="/Career" element={<Career />} />
+        <Route path="*" element={<Errorpage />} />
+        <Route
+          path="/blog"
+          element={
+            <LayoutnewWrapper>
+              <Blog />
+            </LayoutnewWrapper>
+          }
+        >
+          <Route index element={<NewsPage />} />
+          <Route path="newspage" element={<NewsPage />} />
+          <Route path="AnimalsPage" element={<AnimalsPage />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 export default App;

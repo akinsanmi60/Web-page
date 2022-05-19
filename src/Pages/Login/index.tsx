@@ -8,17 +8,16 @@ import { Wrapper, Button, LogginWrapper, Box } from "./style";
 import { ReactComponent as PassLogo } from "../../Assets/passimage.svg";
 import AuthContext from "../../Context/AuthProvider";
 
+type FormData = {
+  email: string;
+  password: string;
+};
 function Login() {
   const { setAuthUser } = useContext(AuthContext);
   // const [password, setPassword] = useState("");
   // const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
+  const { register, handleSubmit } = useForm<FormData>();
 
   const handleLogin = async (data: any) => {
     console.log(data);
@@ -39,6 +38,7 @@ function Login() {
       console.error(err);
     }
   };
+
   return (
     <LogginWrapper>
       {success ? (
@@ -55,7 +55,6 @@ function Login() {
                     Please enter your ACE password and the email address
                     associated with your account to sign in.
                   </p>
-
                   <form onSubmit={handleSubmit(handleLogin)}>
                     <label htmlFor="email">Email:</label>
                     <input

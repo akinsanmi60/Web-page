@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
         .agreement p {
           margin-top: -6px;
         }
-        input[type="text"],
+        input[type="text"], input[type="email"],
         input[type="password"] {
           font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
             sans-serif;
@@ -115,4 +115,8 @@ export const Button = styled.button`
   button:hover {
     opacity: 0.8;
   }
+`;
+
+export const Box = styled.div`
+  width: 100%;
 `;

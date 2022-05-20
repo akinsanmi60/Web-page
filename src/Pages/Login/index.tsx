@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import Logo from "../../Common/Logo/Logo";
 import { Wrapper, Button, LogginWrapper, Box } from "./style";
 import { ReactComponent as PassLogo } from "../../Assets/passimage.svg";
@@ -12,12 +14,33 @@ type FormData = {
   email: string;
   password: string;
 };
+
+const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+const schema = yup
+  .object({
+    email: yup
+      .string()
+      .matches(EMAIL_REGEX, "Please enter a valid email address")
+      .required(),
+    password: yup
+      .string()
+      .matches(PASSWORD_REGEX, "Please enter a strong password")
+      .required(),
+  })
+  .required();
+
 function Login() {
   const { setAuthUser } = useContext(AuthContext);
-  // const [password, setPassword] = useState("");
-  // const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
-  const { register, handleSubmit } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
 
   const handleLogin = async (data: any) => {
     console.log(data);
@@ -62,9 +85,8 @@ function Login() {
                       id="email"
                       autoComplete="off"
                       required
-                      {...register("email", {
-                        pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      })}
+                      {...register("email")}
+                      {...(errors.email && "Email is required")}
                     />
                     <label htmlFor="password">Password:</label>
                     <input

@@ -2,9 +2,9 @@
 import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import moment from "moment";
-import { ReactComponent as EmptyNews } from "../../../../Assets/empty_news.svg";
-import { JobsProp } from "./type";
-import { EmptyData, Wrapper } from "./style";
+import { ReactComponent as EmptyNews } from "../../../../../Assets/empty_news.svg";
+import { JobsProp } from "../type";
+import { EmptyData, Wrapper } from "../style";
 
 const capitalizeFirstLetter = (word: string) =>
   word?.charAt(0).toUpperCase() + word?.slice(1);

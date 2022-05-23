@@ -1,7 +1,9 @@
 import React from "react";
+// components
+import BoardLayout from "./admin/components/layout";
 
-function CareerPage() {
-  return <div>CareerPage Hello</div>;
+function EBoard() {
+  return <BoardLayout />;
 }
 
-export default CareerPage;
+export default EBoard;

@@ -24,7 +24,7 @@ function AllBlogPage() {
 
   const postPerPage = 4;
   const pagesVisited = pageNumber * postPerPage;
-  // setting the pageCount in nnumber
+  // setting the pageCount in number
   const pageCount = Math.ceil(posts.length / postPerPage);
   // enable to change page number
   const changePage = ({ selected }) => {

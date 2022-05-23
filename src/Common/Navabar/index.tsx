@@ -34,7 +34,7 @@ function Navbar() {
           <div className="newsbox">
             <div className="newsitem">⚠️WARNING !!!⚠️</div>
             <div className="newsitem">
-              👉 Don't pay in advance, including for delivery
+              👉Don't pay in advance, including for delivery
             </div>
             <div className="newsitem">
               👉 Meet the seller at a safe public place

@@ -14,6 +14,8 @@ body {
   --gray-2: #363636;
   --white: white;
   --black: black;
+  --tw-shadow: 0 0 #e8491d;
+  --tw-ring-shadow: 0 0 #e8491d;
 }
 
 * {
@@ -37,18 +39,6 @@ option {
   font-weight: 500;
   margin-bottom: 8px;
   display: flex;
-}
-
-.MuiInputBase-root {
-  margin-top: 0 !important;
-  border-radius: 8px;
-  height: 40px;
-}
-
-textarea {
-  border-radius: 8px;
-  outline: none;
-  padding: 20px;
 }
 
 code {

@@ -26,8 +26,10 @@ import FieldsPage from "./Pages/OpenMarket/LandsMarket";
 // import ProductCardPage from "./Pages/ProductCard/Pesticideindex";
 import QuestionPage from "./Pages/Help";
 import NewsPage from "./Pages/News-Blog/componenets/All-news";
+// Wrappers
 import Wrapper from "./Util/withlayout";
 import LayoutnewWrapper from "./Util/bloglayout";
+import LayoutjobWrapper from "./Util/careerlayout";
 // context
 import { AuthProvider } from "./Context/AuthProvider";
 
@@ -99,8 +101,15 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Verification" element={<Verification />} />
-        <Route path="/Career" element={<Career />} />
         <Route path="*" element={<Errorpage />} />
+        <Route
+          path="/Career"
+          element={
+            <LayoutjobWrapper>
+              <Career />
+            </LayoutjobWrapper>
+          }
+        />
         <Route
           path="/blog"
           element={

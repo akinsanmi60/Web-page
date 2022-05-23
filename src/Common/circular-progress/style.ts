@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const ProgressWrapper = styled.div`
+const ProgressWrapper = styled.div`
   width: fit-content;
   .svg {
     display: block;
@@ -24,4 +24,5 @@ export const ProgressWrapper = styled.div`
     font-size: 12px;
     line-height: 10px;
   }
-`
+`;
+export default ProgressWrapper;

@@ -26,60 +26,62 @@ function Footer() {
           largest online farmers markeplace in Africa.
         </p>
       </div>
-      <div className="footer-middle">
-        <h1>Contact info</h1>
-        <p>
-          <FontAwesomeIcon className="icons" icon={faPhone} />
-          <span>+2348164279799</span>
-        </p>
-        <p>
-          <span>9c Environmental Crescent Lagos state</span>
-        </p>
-        <p>
-          <span>acefarmermarket100@gmail.com</span>
-        </p>
-      </div>
-
-      <div className="letter">
-        <div className="footer-contact">
-          <h1>Info Links</h1>
-          <LinkItem>
-            <Link to="/Touch">Contact us</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to="/testimony">Testimony</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to="/help">Help</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to="/Career">Careers</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link to="/MarketPlace">Market</Link>
-          </LinkItem>
+      <div className="footerbox">
+        <div className="footer-middle">
+          <h1>Contact info</h1>
+          <p>
+            <FontAwesomeIcon className="icons" icon={faPhone} />
+            <span>+2348164279799</span>
+          </p>
+          <p>
+            <span>9c Environmental Crescent Lagos state</span>
+          </p>
+          <p>
+            <span>acefarmermarket100@gmail.com</span>
+          </p>
         </div>
-        <div className="footerform">
-          <Label htmlFor="letters">Subscribe for updates</Label>
-          <input
-            type="text"
-            id="letters"
-            ref={letterRef}
-            autoComplete="off"
-            onChange={e => setLetter(e.target.value)}
-            value={letter}
-            required
-          />
-          <Button
-            size="small"
-            variant="contained"
-            sx={{
-              backgroundColor: " #e8491d",
-              marginTop: "5px",
-            }}
-          >
-            Send
-          </Button>
+
+        <div className="letter">
+          <div className="footer-contact">
+            <h1>Info Links</h1>
+            <LinkItem>
+              <Link to="/Touch">Contact us</Link>
+            </LinkItem>
+            <LinkItem>
+              <Link to="/testimony">Testimony</Link>
+            </LinkItem>
+            <LinkItem>
+              <Link to="/help">Help</Link>
+            </LinkItem>
+            <LinkItem>
+              <Link to="/Career">Careers</Link>
+            </LinkItem>
+            <LinkItem>
+              <Link to="/MarketPlace">Market</Link>
+            </LinkItem>
+          </div>
+          <div className="footerform">
+            <Label htmlFor="letters">Subscribe for updates</Label>
+            <input
+              type="text"
+              id="letters"
+              ref={letterRef}
+              autoComplete="off"
+              onChange={e => setLetter(e.target.value)}
+              value={letter}
+              required
+            />
+            <Button
+              size="small"
+              variant="contained"
+              sx={{
+                backgroundColor: " #e8491d",
+                marginTop: "5px",
+              }}
+            >
+              Send
+            </Button>
+          </div>
         </div>
       </div>
     </FooterWrapper>

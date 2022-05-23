@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import Button from "@mui/material/Button";
 import styled from "styled-components";
+import CustomButton from "../../Button";
+
 // import Button from "../../Button";
 
 const AccessibilityContainer = styled.div`
@@ -13,23 +14,7 @@ function Accessibility() {
 
   return (
     <AccessibilityContainer>
-      <Button
-        onClick={() => navigate("login")}
-        size="medium"
-        variant="contained"
-        sx={{
-          backgroundColor: " #e8491d",
-          marginTop: "5px",
-          height: "38px",
-          "&:active": {
-            boxShadow: "none",
-            backgroundColor: "green",
-            borderColor: "yellow",
-          },
-        }}
-      >
-        Login
-      </Button>
+      <CustomButton onClick={() => navigate("login")} title="Login" />
     </AccessibilityContainer>
   );
 }

@@ -5,7 +5,7 @@ import { BlogWrapper } from "./style";
 import Recentnews from "../../../../Storage/Newsdetails";
 import Recentjobs from "../../../../Storage/Jobdetails";
 import News from "./Recent/Recent";
-import Jobs from "./Jobs";
+import Jobs from "./Jobs/Jobs";
 
 function Blog() {
   const navigate = useNavigate();

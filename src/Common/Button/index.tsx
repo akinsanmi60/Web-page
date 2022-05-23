@@ -27,17 +27,14 @@ const Wrapper = styled.div<Pick<IButtonParent, "variant">>`
   .MuiButton-contained {
     box-shadow: none;
     padding: 4px 20px;
-    border-radius: 25px;
-    background-color: ${({ variant }) =>
-      variant === "orange" ? "#E37425" : "#143055"};
+    border-radius: 4px;
+    background-color: #e8491d;
     color: #ffffff;
     font-size: 14px;
     text-transform: capitalize;
-    border: ${({ variant }) =>
-      variant === "orange"
-        ? "1px solid var(--primary-orange)"
-        : "1px solid var(--primary-blue)"};
-
+    border: 0;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
     :hover {
       ${({ variant }) =>
         variant === "orange" &&
@@ -52,6 +49,11 @@ const Wrapper = styled.div<Pick<IButtonParent, "variant">>`
         }
       `}
     }
+    :active {
+            boxShadow: "none",
+            backgroundColor: "green",
+            borderColor: "yellow",
+          }
   }
 
   svg {

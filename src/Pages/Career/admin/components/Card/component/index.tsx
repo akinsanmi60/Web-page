@@ -49,7 +49,7 @@ const JobCard = ({ item, i, props }) => {
                 <span>{location}</span>
                 <div>
                   <p>Level: {level}</p>
-                  <p>Posted: {created}</p>
+                  <p>Posted: {moment(`${created}`).format("LL")}</p>
                   <div>
                     {isHiring ? <span>🎯 currently hiring</span> : null}
                   </div>

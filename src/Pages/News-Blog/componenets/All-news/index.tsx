@@ -14,7 +14,7 @@ import { PostProp } from "./type";
 const styles = {
   logo: {
     width: "100%",
-    height: " 300px",
+    height: " 200px",
     marginTop: "20px",
   },
 };
@@ -39,7 +39,7 @@ function AllBlogPage() {
       </div>
     ));
 
-  const { isLoading, isError } = useQuery(
+  const { isLoading, isError, isIdle } = useQuery(
     "news",
     () =>
       axios.get(
@@ -69,7 +69,7 @@ function AllBlogPage() {
           </EmptyData>
         ) : (
           <div>
-            {displayPost}
+            <div className="postpage">{displayPost}</div>
             <div className="select-btn">
               <ReactPaginate
                 previousLabel="<<<"

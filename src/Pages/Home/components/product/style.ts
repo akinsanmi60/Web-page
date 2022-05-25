@@ -28,7 +28,7 @@ export const CardDiv = styled.div`
     justify-content: space-between;
     margin-top: 10px;
     p {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: normal;
     }
 
@@ -38,10 +38,13 @@ export const CardDiv = styled.div`
       text-align: justify;
       color: #333333;
     }
+    .mediabox {
+      transition: transform 450ms;
+      padding-right: 7px;
+    }
     @media (min-width: 1024px) {
       display: flex;
       flex-direction: row;
-      padding: 7px;
     }
   }
   @media (max-width: 425px) {

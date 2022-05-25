@@ -6,6 +6,9 @@ const Wrapper = styled.div`
   color: white;
   overflow: hidden;
   .postwrapper {
+    .postpage {
+      min-height: 80vh;
+    }
   }
   .paginationBttns {
     width: 80%;

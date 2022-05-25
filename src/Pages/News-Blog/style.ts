@@ -5,6 +5,7 @@ const BlogNewsWrapper = styled.div`
   color: white;
   overflow: hidden;
   .blogwrapper {
+    min-height: 100vh;
     display: flex;
     @media (max-width: 425px) {
       flex-direction: column;

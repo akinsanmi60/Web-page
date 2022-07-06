@@ -33,6 +33,11 @@ import LayoutjobWrapper from "./Util/careerlayout";
 // context
 import { AuthProvider } from "./Context/AuthProvider";
 
+// enum Role {
+//   AdminRole = "Admin",
+//   SellerRole = "Seller",
+// }
+
 function App() {
   return (
     <AuthProvider>
